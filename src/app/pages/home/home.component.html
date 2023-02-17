@@ -1,0 +1,6 @@
+<p *ngIf="isLoading; else coinsContainer">Loading...</p>
+<ng-template #coinsContainer>
+    <h1>Hello , {{user.name}}</h1>
+    <p>USD: {{user.coins | currency }}</p>
+    <p>BTC Coins: {{btcCoins}}</p>
+</ng-template>

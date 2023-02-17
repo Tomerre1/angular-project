@@ -1,0 +1,7 @@
+<contact-filter></contact-filter>
+<div class="contacts-list">
+    <ul class="contacts">
+        <contact-preview (removeContactEvent)="removeContactEvent.emit($event)"
+            *ngFor=" let contact of contacts; trackBy:trackByFn" [contact]="contact"></contact-preview>
+    </ul>
+</div>

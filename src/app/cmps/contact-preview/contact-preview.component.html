@@ -1,0 +1,16 @@
+<li class="contact-preview" (click)="onSelectContact()">
+    <section class="info">
+        <section class="data">
+            <p><u>Name:</u> {{contact.name}}</p>
+            <p><u>Email:</u> {{contact.email}}</p>
+            <p><u>Phone:</u> {{contact.phone}}</p>
+        </section>
+        <section class="actions">
+            <button class="btn" (click)="onRemoveContact()">X</button>
+            <button class="btn" (click)="onEditContact()">
+                <img src="../../../assets/images/edit.png" />
+            </button>
+        </section>
+    </section>
+    <img src="https://robohash.org/{{contact._id}}?set=set4" alt="">
+</li>

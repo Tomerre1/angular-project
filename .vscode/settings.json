@@ -1,0 +1,212 @@
+{
+  "peacock.remoteColor": "#1857a4",
+  "workbench.colorTheme": "Andromeda Bordered",
+  "workbench.colorCustomizations": {
+    "[Andromeda Bordered]": {
+      "tab.activeBackground": "#610CA1",
+      "tab.activeForeground": "#FFB8B8",
+      "editorGroupHeader.tabsBackground": "#1B1321",
+      "tab.inactiveBackground": "#1B1321",
+      "activityBar.activeBackground": "#9000FF",
+      "sideBar.border": "#1f6fd0",
+      "panel.border": "#1f6fd0",
+      "activityBar.border": "#1f6fd0",
+      "editorGroupHeader.border": "#9000FF",
+      "panel.background": "#1B1321",
+      "editor.background": "#1B1321",
+      "breadcrumb.background": "#1B1321",
+      "sideBar.background": "#1B1321",
+      "sideBarSectionHeader.background": "#1B1321",
+      "statusBar.background": "#1B1321",
+      "statusBar.border": "#1f6fd0",
+      "activityBar.background": "#1f6fd0",
+      "titleBar.activeBackground": "#1f6fd0",
+      "editor.foreground": "#FFB8B8"
+    },
+    "activityBar.activeBorder": "#ee90bb",
+    "activityBar.activeBackground": "#ff6433",
+    "activityBar.background": "#ff6433",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#00ff3d",
+    "activityBarBadge.foreground": "#15202b",
+    "commandCenter.border": "#e7e7e799",
+    "sash.hoverBorder": "#ff6433",
+    "statusBar.background": "#ff3d00",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#ff6433",
+    "statusBarItem.remoteBackground": "#ff3d00",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "titleBar.activeBackground": "#ff3d00",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#ff3d0099",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "editor.minimap.enabled": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.format.enable": true,
+  "eslint.validate": ["javascript", "javascriptreact"],
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "diffEditor.ignoreTrimWhitespace": true,
+  "importCost.timeout": 100000,
+  "liveServer.settings.ChromeDebuggingAttachment": false,
+  "better-comments.multilineComments": true,
+  "liveServer.settings.port": 5500,
+  "colorful-comments.tags": [
+    {
+      "tag": "!",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "?",
+      "color": "#0076FF",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "//",
+      "color": "#474747",
+      "strikethrough": true,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "^",
+      "color": "#EAF622",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "*",
+      "color": "#1BAB00",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "&",
+      "color": "#FF06A0",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "~",
+      "color": "#BE00FF",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "#",
+      "color": "white",
+      "strikethrough": false,
+      "backgroundColor": "white"
+    }
+  ],
+  "better-comments.tags": [
+    {
+      "usage": "consts",
+      "tag": "!",
+      "color": "#FFF",
+      "strikethrough": false,
+      "underline": true,
+      "backgroundColor": "#7717D1",
+      "bold": true,
+      "italic": false
+    },
+    {
+      "tag": "-!",
+      "color": "#7717D1",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": true,
+      "italic": true
+    },
+    {
+      "usage": "styles",
+      "tag": "&",
+      "color": "#FFF",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "#F20089",
+      "bold": true,
+      "italic": false
+    },
+    {
+      "tag": "-&",
+      "color": "#F20089",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": true,
+      "italic": true
+    },
+    {
+      "usage": "components",
+      "tag": "^",
+      "color": "#000",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "#EAF622",
+      "bold": true,
+      "italic": false
+    },
+    {
+      "tag": "-^",
+      "color": "#EAF622",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": true,
+      "italic": true
+    },
+    {
+      "usage": "dependencies",
+      "tag": "<",
+      "color": "#FFF",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "#0022FF",
+      "bold": true,
+      "italic": false
+    },
+    {
+      "usage": "project imports",
+      "tag": ">",
+      "color": "#FFF",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "#03AB00",
+      "bold": true,
+      "italic": false
+    },
+    {
+      "usage": "connect to HOCs",
+      "tag": "~",
+      "color": "#FFF",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "#FF2D00",
+      "bold": true,
+      "italic": false
+    },
+    {
+      "tag": "//",
+      "color": "#474747",
+      "strikethrough": true,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    }
+  ],
+  "explorer.compactFolders": false,
+  "cSpell.userWords": ["Blub"],
+  "peacock.color": "#ff3d00"
+}

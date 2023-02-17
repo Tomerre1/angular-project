@@ -1,0 +1,47 @@
+<h1 style="text-align: center;font-size: 40px;">
+    <ng-container *ngIf="editContactMode;else contactEdit">
+        Contact Edit Page
+    </ng-container>
+    <ng-template #contactEdit>Contact Details Page</ng-template>
+</h1>
+
+<button class="back-btn" (click)="onBack()">
+    <img src="../../../assets/images/back.png" />
+</button>
+<div class="contact-preview">
+    <section class=" info">
+        <section class="data">
+            <p>
+                <span> <u>Name: </u></span>
+                <ng-container *ngIf="!editContactMode; else inputName"> {{contact.name}}</ng-container>
+                <ng-template #inputName>
+                    <input [(ngModel)]="editContact.name" type="text" name="name" />
+                </ng-template>
+            </p>
+            <p>
+                <span><u>Email: </u></span>
+                <ng-container *ngIf="!editContactMode; else inputEmail"> {{contact.email}}</ng-container>
+                <ng-template #inputEmail>
+                    <input [(ngModel)]="editContact.email" type="text" name="email" />
+                </ng-template>
+            </p>
+            <p>
+                <span><u>Phone: </u> </span>
+                <ng-container *ngIf="!editContactMode; else inputPhone"> {{contact.phone}}</ng-container>
+                <ng-template #inputPhone>
+                    <input [(ngModel)]="editContact.phone" type="text" name="phone" />
+                </ng-template>
+            </p>
+        </section>
+        <section class="actions">
+            <button class="btn" (click)="removeContactEvent.emit(contact._id)">X</button>
+            <button class="btn" (click)="onEdit()" *ngIf="!editContactMode">
+                <img src="../../../assets/images/edit.png" />
+            </button>
+            <button class="btn" (click)="onSubmit()" *ngIf="editContactMode">
+                <img src="../../../assets/images/submit.png" />
+            </button>
+        </section>
+    </section>
+    <img src="https://robohash.org/{{contact._id}}?set=set4" alt="">
+</div>
