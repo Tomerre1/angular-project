@@ -160,8 +160,8 @@ export class ContactService {
 
   public saveContact(contact: Contact) {
     return contact._id
-      ? this._updateContact(contact)
-      : this._addContact(contact);
+      ? of(this._updateContact(contact))
+      : of(this._addContact(contact));
   }
 
   public setContactFilter(filterBy: ContactFilter) {
@@ -179,10 +179,10 @@ export class ContactService {
   }
 
   private _addContact(contact: Contact) {
+    debugger;
     //mock the server work
-    const newContact = new Contact(contact.name, contact.email, contact.phone);
-    if (typeof newContact.setId === 'function') newContact.setId(getRandomId());
-    this._contactsDb.push(newContact);
+    contact._id = getRandomId();
+    this._contactsDb.push(contact);
     this._contacts$.next(this._sort(this._contactsDb));
   }
 

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddContactPopupComponent } from './add-contact-popup/add-contact-popup.component';
 import { ContactDetailsComponent } from './cmps/contact-details/contact-details.component';
 import { ContactGuard } from './guards/contact.guard';
 import { ChartComponent } from './pages/chart/chart.component';
@@ -15,12 +16,16 @@ const routes: Routes = [
     resolve: { contact: ContactResolver },
   },
   {
+    path: 'contacts',
+    component: ContactsComponent,
+    children: [{ path: 'add', component: AddContactPopupComponent }],
+  },
+  {
     path: 'contacts/:id',
     component: ContactDetailsComponent,
     resolve: { contact: ContactResolver },
     canActivate: [ContactGuard],
   },
-  { path: 'contacts', component: ContactsComponent },
   { path: 'stats', component: ChartComponent },
   { path: '', component: HomeComponent },
 ];

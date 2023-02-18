@@ -1,3 +1,5 @@
 <section class="contacts-container">
+    <button routerLink="/contacts/add">Add</button>
     <contact-list (removeContactEvent)="onRemoveContact($event)" [contacts]="(contacts$|async)!"></contact-list>
+    <router-outlet></router-outlet>
 </section>

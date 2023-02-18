@@ -14,6 +14,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { GoogleChartsModule } from 'angular-google-charts';
 import { ChartComponent } from './pages/chart/chart.component';
 import { HeaderComponent } from './cmps/header/header.component';
+import { AddContactPopupComponent } from './add-contact-popup/add-contact-popup.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { HeaderComponent } from './cmps/header/header.component';
     HomeComponent,
     ChartComponent,
     HeaderComponent,
+    AddContactPopupComponent,
   ],
   imports: [
     BrowserModule,
