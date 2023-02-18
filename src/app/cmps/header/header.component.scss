@@ -12,4 +12,7 @@ header {
         object-fit: contain;
         cursor: pointer;
     }
+    .active {
+        border: 1px solid red;
+    }
 }
