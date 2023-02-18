@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { ContactFilter } from 'src/app/models/contact.model';
 import { ContactService } from 'src/app/services/contact.service';
 

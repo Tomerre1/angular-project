@@ -16,10 +16,12 @@ export class ContactPreviewComponent implements OnInit {
   onSelectContact() {
     this.router.navigate(['/contacts/', this.contact._id]);
   }
-  onRemoveContact() {
+  onRemoveContact(event: MouseEvent) {
+    event.stopPropagation();
     this.removeContactEvent.emit(this.contact._id);
   }
-  onEditContact() {
+  onEditContact(event: MouseEvent) {
+    event.stopPropagation();
     this.router.navigate(['/contacts/', 'edit', this.contact._id]);
   }
   ngOnInit(): void {}

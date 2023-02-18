@@ -1,6 +1,6 @@
-import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { lastValueFrom } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { Contact } from 'src/app/models/contact.model';
 import { ContactService } from 'src/app/services/contact.service';
 
@@ -9,12 +9,11 @@ import { ContactService } from 'src/app/services/contact.service';
   templateUrl: './contact-details.component.html',
   styleUrls: ['./contact-details.component.scss'],
 })
-export class ContactDetailsComponent implements OnInit {
-  @Output() removeContactEvent = new EventEmitter<string>();
+export class ContactDetailsComponent implements OnInit, OnDestroy {
   editContactMode!: Boolean;
   editContact!: Contact;
   contact!: Contact;
-
+  paramsSubscription!: Subscription;
   constructor(
     private contactService: ContactService,
     private router: Router,
@@ -22,21 +21,16 @@ export class ContactDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.route.data.subscribe((data: { editMode?: boolean }) => {
-      this.editContactMode = data?.editMode || false;
+    this.paramsSubscription = this.route.data.subscribe((data) => {
+      this.editContactMode = !!data['editMode'];
+      const contact: Contact = data['contact'];
+      if (!this.editContactMode) this.contact = contact;
+      else this.editContact = contact;
     });
+  }
 
-    this.route.params.subscribe(async (params) => {
-      const contactById = (await lastValueFrom(
-        this.contactService.getContactById(params['id'])
-      )) as unknown as Contact;
-
-      if (this.editContactMode) {
-        this.editContact = contactById;
-      } else {
-        this.contact = contactById;
-      }
-    });
+  ngOnDestroy(): void {
+    this.paramsSubscription.unsubscribe();
   }
 
   onBack = (): void => {
@@ -47,8 +41,15 @@ export class ContactDetailsComponent implements OnInit {
     this.router.navigate(['/contacts/edit', this.contact._id]);
   };
 
+  onRemove = (): void => {
+    const contactDeletId = (this.editContact?._id ||
+      this.contact._id) as string;
+    this.contactService.deleteContact(contactDeletId);
+    this.onBack();
+  };
+
   onSubmit = (): void => {
     this.contactService.saveContact(this.editContact);
-    this.onBack();
+    this.router.navigate(['/contacts', this.editContact._id]);
   };
 }

@@ -8,7 +8,7 @@
 <button class="back-btn" (click)="onBack()">
     <img src="../../../assets/images/back.png" />
 </button>
-<div class="contact-preview">
+<div class="contact-preview" *ngIf="editContact?._id || contact?._id">
     <section class=" info">
         <section class="data">
             <p>
@@ -34,7 +34,7 @@
             </p>
         </section>
         <section class="actions">
-            <button class="btn" (click)="removeContactEvent.emit(contact._id)">X</button>
+            <button class="btn" (click)="onRemove()">X</button>
             <button class="btn" (click)="onEdit()" *ngIf="!editContactMode">
                 <img src="../../../assets/images/edit.png" />
             </button>
@@ -43,5 +43,5 @@
             </button>
         </section>
     </section>
-    <img src="https://robohash.org/{{contact._id}}?set=set4" alt="">
+    <img src="https://robohash.org/{{(contact?._id||editContact._id)}}?set=set4" alt="">
 </div>

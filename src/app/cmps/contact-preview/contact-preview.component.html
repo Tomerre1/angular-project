@@ -6,8 +6,8 @@
             <p><u>Phone:</u> {{contact.phone}}</p>
         </section>
         <section class="actions">
-            <button class="btn" (click)="onRemoveContact()">X</button>
-            <button class="btn" (click)="onEditContact()">
+            <button class="btn" (click)="onRemoveContact($event)">X</button>
+            <button class="btn" (click)="onEditContact($event)">
                 <img src="../../../assets/images/edit.png" />
             </button>
         </section>

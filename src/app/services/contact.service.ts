@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, BehaviorSubject, of, throwError } from 'rxjs';
+import { Observable, BehaviorSubject, of, throwError, delay } from 'rxjs';
 import { Contact, ContactFilter } from '../models/contact.model';
 
 const CONTACTS = [
@@ -146,7 +146,7 @@ export class ContactService {
     const contact = this._contactsDb.find((contact) => contact._id === id);
     //return an observable
     return contact
-      ? of(contact)
+      ? of(contact).pipe(delay(1000))
       : throwError(() => `Contact id ${id} not found!`);
   }
 
